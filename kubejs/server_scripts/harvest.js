@@ -3,8 +3,7 @@ const BLOCK = java('net.minecraft.world.level.block.Block')
 const STEM = java('net.minecraft.world.level.block.StemBlock')
 onEvent('block.right_click', event => {
     let block = event.block
-
-    if (block.hasTag('minecraft:crops')) {
+    if (block.hasTag('minecraft:crops') || block.hasTag('mysticalagriculture:crops')) {
         let mcLevel = event.level.minecraftLevel
         let blockState = mcLevel.getBlockState(block.pos)
         let mcBlock = blockState.block
